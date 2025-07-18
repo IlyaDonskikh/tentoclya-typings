@@ -1,5 +1,5 @@
 export interface CoreMessageCreatedPayload {
-  telegramMessage: CoreMessage;
+  message: CoreMessage;
 }
 
 export enum CoreMessageName {
