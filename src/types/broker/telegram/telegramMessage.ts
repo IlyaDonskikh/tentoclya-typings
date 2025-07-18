@@ -31,7 +31,7 @@ export enum TelegramTelegramMessageParseMode {
 }
 
 export interface TelegramTelegramMessage {
-  uuid?: string;
+  uuid: string;
   type: TelegramTelegramMessageType;
   code: TelegramTelegramMessageCode;
   status: TelegramTelegramMessageStatus;

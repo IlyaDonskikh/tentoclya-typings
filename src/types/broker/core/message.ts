@@ -13,7 +13,7 @@ export enum CoreMessageStatus {
 }
 
 export interface CoreMessage {
-  uuid?: string;
+  uuid: string;
   userUUID?: string | null;
   chatUUID: string;
   text?: string | null;
@@ -24,6 +24,6 @@ export interface CoreMessage {
   isTopic?: boolean;
   topicMessageUUID?: string | null;
   status: CoreMessageStatus;
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
