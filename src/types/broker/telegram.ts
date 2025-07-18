@@ -1,11 +1,10 @@
-import { TentoclyaBrokerQueue } from "../broker";
-
-interface TelegramMessageCreatedPayload {
-  telegramMessage: {
-    uuid: string;
-  };
-}
+import {
+  TelegramTelegramMessageCreatedPayload,
+  TentoclyaBrokerQueue,
+} from "../broker";
 
 export interface TentoclyaBrokerTelegram {
-  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: TelegramMessageCreatedPayload;
+  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: TelegramTelegramMessageCreatedPayload;
 }
+
+export * from "./telegram/telegramMessage";
