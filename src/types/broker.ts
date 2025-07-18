@@ -1,20 +1,20 @@
-export enum BrokerQueueList {
+export enum TentoclyaBrokerQueueList {
   coreMessageCreated = "core.message.created",
   telegramTelegramMessagesCreated = "telegram.telegramMessage.created",
 }
 
-export const BrokerQueue = {
-  coreMessageCreated: BrokerQueueList.coreMessageCreated,
+export const TentoclyaBrokerQueue = {
+  coreMessageCreated: TentoclyaBrokerQueueList.coreMessageCreated,
   telegramTelegramMessagesCreated:
-    BrokerQueueList.telegramTelegramMessagesCreated,
+    TentoclyaBrokerQueueList.telegramTelegramMessagesCreated,
 } as const;
 
-export type BrokerQueueType = typeof BrokerQueue;
+export type TentoclyaBrokerQueueType = typeof TentoclyaBrokerQueue;
 
 // Define the Core type mapping
 export interface Core {
-  [BrokerQueue.coreMessageCreated]: {
-    Message: {
+  [TentoclyaBrokerQueue.coreMessageCreated]: {
+    message: {
       uuid: string;
       content: string;
       createdAt: Date;
@@ -24,8 +24,8 @@ export interface Core {
 }
 
 export interface Telegram {
-  [BrokerQueue.telegramTelegramMessagesCreated]: {
-    TelegramMessage: {
+  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: {
+    telegramMessage: {
       uuid: string;
     };
   };

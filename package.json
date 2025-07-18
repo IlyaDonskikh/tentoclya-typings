@@ -1,13 +1,13 @@
 {
   "name": "tentoclya-types",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Typings for Tentoclya ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "prepublish": "npm run build",
-    "deploy": "npm publish"
+    "deploy": "npm run build && npm publish"
   },
   "keywords": [],
   "author": "",
