@@ -1,5 +1,5 @@
 {
-  "name": "@tentoclya/typings",
+  "name": "tentoclya-types",
   "version": "0.1.0",
   "description": "Typings for Tentoclya ",
   "main": "dist/index.js",
