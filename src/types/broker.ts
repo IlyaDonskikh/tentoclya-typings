@@ -1,32 +1,31 @@
-export enum TentoclyaBrokerQueueList {
-  coreMessageCreated = "core.message.created",
-  telegramTelegramMessagesCreated = "telegram.telegramMessage.created",
-}
-
+// Queue names as const for type safety
 export const TentoclyaBrokerQueue = {
-  coreMessageCreated: TentoclyaBrokerQueueList.coreMessageCreated,
-  telegramTelegramMessagesCreated:
-    TentoclyaBrokerQueueList.telegramTelegramMessagesCreated,
+  coreMessageCreated: "core.message.created",
+  telegramTelegramMessagesCreated: "telegram.telegramMessage.created",
 } as const;
 
-export type TentoclyaBrokerQueueType = typeof TentoclyaBrokerQueue;
+// Type for queue names
+export type TentoclyaBrokerQueueType =
+  (typeof TentoclyaBrokerQueue)[keyof typeof TentoclyaBrokerQueue];
 
-// Define the Core type mapping
-export interface Core {
-  [TentoclyaBrokerQueue.coreMessageCreated]: {
-    message: {
-      uuid: string;
-      content: string;
-      createdAt: Date;
-      updatedAt: Date;
-    };
+// Message payload types
+interface CoreMessageCreatedPayload {
+  message: {
+    uuid: string;
+    content: string;
+    createdAt: Date;
+    updatedAt: Date;
   };
 }
 
-export interface Telegram {
-  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: {
-    telegramMessage: {
-      uuid: string;
-    };
+interface TelegramMessageCreatedPayload {
+  telegramMessage: {
+    uuid: string;
   };
+}
+
+// Queue to payload mapping
+export interface TentoclyaBrokerPayloads {
+  [TentoclyaBrokerQueue.coreMessageCreated]: CoreMessageCreatedPayload;
+  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: TelegramMessageCreatedPayload;
 }
