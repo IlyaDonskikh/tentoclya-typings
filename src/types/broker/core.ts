@@ -10,17 +10,17 @@ interface CoreMessageCreatedPayload {
 }
 
 interface CoreUserProviderCreatedPayload {
-  userProvider: UserProviderAttributes;
+  userProvider: CoreUserProvider;
 }
 
-export enum UserProviderName {
+export enum CoreUserProviderName {
   telegram = "telegram",
   email = "email",
 }
 
-interface UserProviderAttributes {
+interface CoreUserProvider {
   uuid: string;
-  name: UserProviderName;
+  name: CoreUserProviderName;
   externalUserId: string;
   userUUID: string;
   createdAt: Date;
