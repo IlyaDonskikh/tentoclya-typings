@@ -1,20 +1,7 @@
-// Queue names as const for type safety
-export const TentoclyaBrokerQueue = {
-  core: {
-    userCreated: "core.user.created",
-    userProviderCreated: "core.userProvider.created",
-    messageCreated: "core.message.created",
-  },
-  telegram: {
-    start: "telegram.start",
-    block: "telegram.block",
-    telegramMessageCreated: "telegram.telegramMessage.created",
-  },
-} as const;
-
-// Type for queue names
-export type TentoclyaBrokerQueueType =
-  (typeof TentoclyaBrokerQueue)[keyof typeof TentoclyaBrokerQueue];
+export enum TentoclyaBrokerQueueList {
+  coreMessageCreated = "core.message.created",
+  telegramTelegramMessagesCreated = "telegram.telegramMessage.created",
+}
 
 // Message payload types
 interface CoreMessageCreatedPayload {
@@ -32,12 +19,11 @@ interface TelegramMessageCreatedPayload {
   };
 }
 
-// Queue to payload mapping
+// Define the Core type mapping
 export interface TentoclyaBrokerCore {
-  [TentoclyaBrokerQueue.core.messageCreated]: CoreMessageCreatedPayload;
+  [TentoclyaBrokerQueueList.coreMessageCreated]: CoreMessageCreatedPayload;
 }
 
 export interface TentoclyaBrokerTelegram {
-  [TentoclyaBrokerQueue.telegram
-    .telegramMessageCreated]: TelegramMessageCreatedPayload;
+  [TentoclyaBrokerQueueList.telegramTelegramMessagesCreated]: TelegramMessageCreatedPayload;
 }
