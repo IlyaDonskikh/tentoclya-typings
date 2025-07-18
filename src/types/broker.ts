@@ -25,7 +25,10 @@ interface TelegramMessageCreatedPayload {
 }
 
 // Queue to payload mapping
-export interface TentoclyaBrokerPayloads {
+export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreMessageCreated]: CoreMessageCreatedPayload;
+}
+
+export interface TentoclyaBrokerTelegram {
   [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: TelegramMessageCreatedPayload;
 }
