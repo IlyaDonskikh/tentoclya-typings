@@ -1,0 +1,22 @@
+{
+  "name": "@tentoclya/typings",
+  "version": "0.1.0",
+  "description": "Typings for Tentoclya ",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build",
+    "deploy": "npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
