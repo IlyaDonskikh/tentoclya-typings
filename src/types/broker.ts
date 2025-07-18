@@ -1,7 +1,15 @@
 // Queue names as const for type safety
 export const TentoclyaBrokerQueue = {
-  coreMessageCreated: "core.message.created",
-  telegramTelegramMessagesCreated: "telegram.telegramMessage.created",
+  core: {
+    userCreated: "core.user.created",
+    userProviderCreated: "core.userProvider.created",
+    messageCreated: "core.message.created",
+  },
+  telegram: {
+    start: "telegram.start",
+    block: "telegram.block",
+    telegramMessageCreated: "telegram.telegramMessage.created",
+  },
 } as const;
 
 // Type for queue names
@@ -26,9 +34,10 @@ interface TelegramMessageCreatedPayload {
 
 // Queue to payload mapping
 export interface TentoclyaBrokerCore {
-  [TentoclyaBrokerQueue.coreMessageCreated]: CoreMessageCreatedPayload;
+  [TentoclyaBrokerQueue.core.messageCreated]: CoreMessageCreatedPayload;
 }
 
 export interface TentoclyaBrokerTelegram {
-  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: TelegramMessageCreatedPayload;
+  [TentoclyaBrokerQueue.telegram
+    .telegramMessageCreated]: TelegramMessageCreatedPayload;
 }
