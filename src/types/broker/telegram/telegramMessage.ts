@@ -24,6 +24,7 @@ export enum TelegramTelegramMessageSourceableType {
 
 export enum TelegramTelegramMessageCode {
   startInfo = "startInfo",
+  errorBuilderFlatRegularMessage = "errorBuilderFlatRegularMessage",
 }
 
 export enum TelegramTelegramMessageParseMode {
