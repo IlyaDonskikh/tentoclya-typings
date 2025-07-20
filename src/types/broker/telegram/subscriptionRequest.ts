@@ -21,7 +21,6 @@ interface TelegramSubscriptionRequestTelegramChannel {
   id: number; // BIGINT in database
   title: string;
   username?: string;
-  name: string;
   createdAt?: Date;
   updatedAt?: Date;
 }
