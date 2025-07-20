@@ -18,7 +18,7 @@ export interface TelegramSubscriptionRequest {
 }
 
 interface TelegramSubscriptionRequestTelegramChannel {
-  id: number; // BIGINT in database
+  id: string; // BIGINT in database
   title: string;
   username?: string;
   createdAt?: Date;
