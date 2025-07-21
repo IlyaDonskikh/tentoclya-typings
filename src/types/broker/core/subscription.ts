@@ -1,7 +1,7 @@
 import { CoreChannelType } from "../../models/core";
 
 export interface BrokerCoreSubscriptionCreatedPayload {
-  userProvider: CoreSubscription;
+  subscription: CoreSubscription;
 }
 
 interface CoreSubscription {
@@ -10,12 +10,16 @@ interface CoreSubscription {
   group: {
     uuid: string;
     userUUID: string;
+    createdAt: Date;
+    updatedAt: Date;
   };
   channel: {
     uuid: string;
     type: CoreChannelType;
-    sourceableUUID: string;
+    sourceUUID: string;
     externalId: string;
+    createdAt: Date;
+    updatedAt: Date;
   };
   createdAt: Date;
   updatedAt: Date;
