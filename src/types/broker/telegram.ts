@@ -3,6 +3,6 @@ import { BrokerTelegramTelegramMessageCreatedPayload } from "./telegram/telegram
 import { BrokerTelegramSubscriptionRequestCreatedPayload } from "./telegram/subscriptionRequest";
 
 export interface TentoclyaBrokerTelegram {
-  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: BrokerTelegramTelegramMessageCreatedPayload;
-  [TentoclyaBrokerQueue.telegramSubscriptionRequestsCreated]: BrokerTelegramSubscriptionRequestCreatedPayload;
+  [TentoclyaBrokerQueue.telegramTelegramMessageCreated]: BrokerTelegramTelegramMessageCreatedPayload;
+  [TentoclyaBrokerQueue.telegramSubscriptionRequestCreated]: BrokerTelegramSubscriptionRequestCreatedPayload;
 }
