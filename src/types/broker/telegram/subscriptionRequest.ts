@@ -1,10 +1,7 @@
+import { TelegramSubscriptionRequestStatus } from "../../models/telegram/subscriptionRequest";
+
 export interface BrokerTelegramSubscriptionRequestCreatedPayload {
   subscriptionRequest: TelegramSubscriptionRequest;
-}
-
-export enum TelegramSubscriptionRequestStatus {
-  created = "created",
-  completed = "completed",
 }
 
 export interface TelegramSubscriptionRequest {

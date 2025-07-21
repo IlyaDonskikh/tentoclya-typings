@@ -1,15 +1,7 @@
+import { CoreMessageStatus } from "../../models/core/message";
+
 export interface BrokerCoreMessageCreatedPayload {
   message: CoreMessage;
-}
-
-export enum CoreMessageName {
-  telegram = "telegram",
-  email = "email",
-}
-
-export enum CoreMessageStatus {
-  created = "created",
-  completed = "completed",
 }
 
 export interface CoreMessage {

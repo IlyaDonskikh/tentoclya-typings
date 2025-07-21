@@ -1,11 +1,8 @@
 import { TentoclyaBrokerQueue } from "../broker";
-import { TelegramTelegramMessageCreatedPayload } from "./telegram/telegramMessage";
-import { TelegramSubscriptionRequestCreatedPayload } from "./telegram/subscriptionRequest";
+import { BrokerTelegramTelegramMessageCreatedPayload } from "./telegram/telegramMessage";
+import { BrokerTelegramSubscriptionRequestCreatedPayload } from "./telegram/subscriptionRequest";
 
 export interface TentoclyaBrokerTelegram {
-  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: TelegramTelegramMessageCreatedPayload;
-  [TentoclyaBrokerQueue.telegramSubscriptionRequestsCreated]: TelegramSubscriptionRequestCreatedPayload;
+  [TentoclyaBrokerQueue.telegramTelegramMessagesCreated]: BrokerTelegramTelegramMessageCreatedPayload;
+  [TentoclyaBrokerQueue.telegramSubscriptionRequestsCreated]: BrokerTelegramSubscriptionRequestCreatedPayload;
 }
-
-export * from "./telegram/telegramMessage";
-export * from "./telegram/subscriptionRequest";

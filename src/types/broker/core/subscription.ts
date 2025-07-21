@@ -1,3 +1,5 @@
+import { CoreChannelType } from "../../models/core";
+
 export interface BrokerCoreSubscriptionCreatedPayload {
   userProvider: CoreSubscription;
 }
@@ -11,6 +13,7 @@ interface CoreSubscription {
   };
   channel: {
     uuid: string;
+    type: CoreChannelType;
     sourceableUUID: string;
     externalId: string;
   };

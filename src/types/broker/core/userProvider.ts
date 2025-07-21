@@ -1,10 +1,7 @@
+import { CoreUserProviderName } from "../../models/core/userProvider";
+
 export interface BrokerCoreUserProviderCreatedPayload {
   userProvider: CoreUserProvider;
-}
-
-export enum CoreUserProviderName {
-  telegram = "telegram",
-  email = "email",
 }
 
 interface CoreUserProvider {
