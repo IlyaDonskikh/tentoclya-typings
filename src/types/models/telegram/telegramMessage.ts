@@ -14,10 +14,6 @@ export enum TelegramTelegramMessageType {
   answerCbQuery = "answerCbQuery",
 }
 
-export enum TelegramTelegramMessageSourceableType {
-  message = "message",
-}
-
 export enum TelegramTelegramMessageCode {
   startInfo = "startInfo",
   subscriptionRequestCompleted = "subscriptionRequestCompleted",
