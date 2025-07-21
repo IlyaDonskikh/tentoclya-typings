@@ -1,4 +1,4 @@
-export interface TelegramSubscriptionRequestCreatedPayload {
+export interface BrokerTelegramSubscriptionRequestCreatedPayload {
   subscriptionRequest: TelegramSubscriptionRequest;
 }
 

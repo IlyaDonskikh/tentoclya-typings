@@ -1,4 +1,4 @@
-export interface TelegramTelegramMessageCreatedPayload {
+export interface BrokerTelegramTelegramMessageCreatedPayload {
   telegramMessage: TelegramTelegramMessage;
 }
 

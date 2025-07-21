@@ -1,4 +1,4 @@
-export interface CoreUserProviderCreatedPayload {
+export interface BrokerCoreUserProviderCreatedPayload {
   userProvider: CoreUserProvider;
 }
 

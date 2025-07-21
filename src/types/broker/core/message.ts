@@ -1,4 +1,4 @@
-export interface CoreMessageCreatedPayload {
+export interface BrokerCoreMessageCreatedPayload {
   message: CoreMessage;
 }
 
