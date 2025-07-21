@@ -20,6 +20,7 @@ export enum TelegramTelegramMessageSourceableType {
 
 export enum TelegramTelegramMessageCode {
   startInfo = "startInfo",
+  subscriptionRequestCompleted = "subscriptionRequestCompleted",
   errorBuilderFlatRegular = "errorBuilderFlatRegular",
 }
 
