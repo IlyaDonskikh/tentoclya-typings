@@ -17,7 +17,7 @@ interface CoreSubscription {
     uuid: string;
     type: CoreChannelType;
     sourceUUID: string;
-    externalId: string;
+    externalId?: string;
     createdAt: Date;
     updatedAt: Date;
   };
