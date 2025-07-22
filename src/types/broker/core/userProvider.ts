@@ -11,5 +11,5 @@ interface CoreUserProvider {
   userUUID: string;
   createdAt: Date;
   updatedAt: Date;
-  deletedAt?: Date;
+  deletedAt?: Date | null;
 }
