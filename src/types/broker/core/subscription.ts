@@ -10,6 +10,7 @@ interface CoreSubscription {
   group: {
     uuid: string;
     userUUID: string;
+    isDefault: boolean;
     createdAt: Date;
     updatedAt: Date;
   };
