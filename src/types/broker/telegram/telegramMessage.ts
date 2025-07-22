@@ -8,7 +8,7 @@ export interface BrokerTelegramTelegramMessageCreatedPayload {
   telegramMessage: TelegramTelegramMessage;
 }
 
-export interface TelegramTelegramMessage {
+interface TelegramTelegramMessage {
   uuid: string;
   type: TelegramTelegramMessageType;
   code: TelegramTelegramMessageCode;

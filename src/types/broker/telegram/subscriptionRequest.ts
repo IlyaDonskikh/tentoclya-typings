@@ -4,7 +4,7 @@ export interface BrokerTelegramSubscriptionRequestCreatedPayload {
   subscriptionRequest: TelegramSubscriptionRequest;
 }
 
-export interface TelegramSubscriptionRequest {
+interface TelegramSubscriptionRequest {
   uuid?: string;
   telegramChannelId: string; // BIGINT in database
   userUUID: string; // Not reference

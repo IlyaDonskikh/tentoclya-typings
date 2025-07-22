@@ -4,7 +4,7 @@ export interface BrokerCoreMessageCreatedPayload {
   message: CoreMessage;
 }
 
-export interface CoreMessage {
+interface CoreMessage {
   uuid: string;
   userUUID?: string | null;
   chatUUID: string;
