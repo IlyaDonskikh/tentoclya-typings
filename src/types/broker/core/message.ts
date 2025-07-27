@@ -1,5 +1,9 @@
 import { CoreMessageStatus } from "../../models/core/message";
 
+export interface BrokerCoreMessageCompletedPayload {
+  message: CoreMessage;
+}
+
 export interface BrokerCoreMessageCreatedPayload {
   message: CoreMessage;
 }
@@ -18,4 +22,8 @@ interface CoreMessage {
   status: CoreMessageStatus;
   createdAt: Date;
   updatedAt: Date;
+  chat: {
+    uuid: string;
+    userUUID: string;
+  };
 }

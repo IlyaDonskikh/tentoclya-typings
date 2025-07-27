@@ -1,5 +1,6 @@
 export enum TentoclyaBrokerQueue {
   coreMessageCreated = "core.message.created",
+  coreMessageCompleted = "core.message.completed",
   coreUserProviderCreated = "core.userProvider.created",
   coreSubscriptionCreated = "core.subscription.created",
   coreErrorBuilderThrow = "core.errorBuilder.throw",
