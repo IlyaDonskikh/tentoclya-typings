@@ -4,7 +4,7 @@ export interface BrokerTelegramTelegramInputCreatedPayload {
 interface TelegramTelegramInput {
   uuid?: string; // UUID
   userUUID: string; // UUID with no reference
-  telegramMessageId: number; // BigInt
+  telegramMessageId: string; // BigInt
   telegramForwardFromMessageId?: string; // BigInt
   telegramMediaGroupId?: string; // BigInt
   replyToTelegramMessageId?: string; // BigInt

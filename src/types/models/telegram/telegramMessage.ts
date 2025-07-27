@@ -18,6 +18,7 @@ export enum TelegramTelegramMessageCode {
   startInfo = "startInfo",
   subscriptionRequestCompleted = "subscriptionRequestCompleted",
   errorBuilderFlatRegular = "errorBuilderFlatRegular",
+  coreMessageCreated = "coreMessageCreated",
 }
 
 export enum TelegramTelegramMessageParseMode {
