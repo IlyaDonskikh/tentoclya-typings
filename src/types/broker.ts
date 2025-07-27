@@ -6,6 +6,7 @@ export enum TentoclyaBrokerQueue {
   telegramCommandStart = "telegram.command.start",
   telegramTelegramMessageCreated = "telegram.telegramMessage.created",
   telegramSubscriptionRequestCreated = "telegram.subscriptionRequest.created",
+  telegramTelegramUserInputCreated = "telegram.telegramUserInput.created",
 }
 
 export * from "./broker/core";
