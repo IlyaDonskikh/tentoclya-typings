@@ -1,12 +1,15 @@
-export interface BrokerTelegramTelegramUserInputCreatedPayload {
-  telegramUserInput: TelegramTelegramUserInput;
+export interface BrokerTelegramTelegramInputCreatedPayload {
+  telegramInput: TelegramTelegramInput;
 }
-interface TelegramTelegramUserInput {
+interface TelegramTelegramInput {
   uuid?: string; // UUID
   userUUID: string; // UUID with no reference
   telegramMessageId: number; // BigInt
   telegramForwardFromMessageId?: string; // BigInt
   telegramMediaGroupId?: string; // BigInt
+  replyToTelegramMessageId?: string; // BigInt
+  replyToTelegramMessageText?: string; // Text
+  replyToTelegramMessageQuoteText?: string; // Text
   text?: string; // Text
   caption?: string; // Text
   createdAt?: Date;
