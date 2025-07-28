@@ -3,7 +3,7 @@ export enum CoreUserInputRequestStatus {
   completed = "completed",
 }
 
-export enum CoreUserInputRequestPayloadRouterCode {
+export enum CoreUserInputRequestPayloadCode {
   systemAction = "systemAction",
   systemKnowledge = "systemKnowledge",
   topicKnowledge = "topicKnowledge",
