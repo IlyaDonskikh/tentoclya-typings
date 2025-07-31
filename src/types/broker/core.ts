@@ -1,5 +1,8 @@
 import { TentoclyaBrokerQueue } from "../broker";
-import { BrokerCoreUserProviderCreatedPayload } from "./core/userProvider";
+import {
+  BrokerCoreUserProviderCreatedPayload,
+  BrokerCoreUserProviderUpdatedPayload,
+} from "./core/userProvider";
 import {
   BrokerCoreMessageCompletedPayload,
   BrokerCoreMessageCreatedPayload,
@@ -11,6 +14,7 @@ export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreMessageCreated]: BrokerCoreMessageCreatedPayload;
   [TentoclyaBrokerQueue.coreMessageCompleted]: BrokerCoreMessageCompletedPayload;
   [TentoclyaBrokerQueue.coreUserProviderCreated]: BrokerCoreUserProviderCreatedPayload;
+  [TentoclyaBrokerQueue.coreUserProviderUpdated]: BrokerCoreUserProviderUpdatedPayload;
   [TentoclyaBrokerQueue.coreSubscriptionCreated]: BrokerCoreSubscriptionCreatedPayload;
   [TentoclyaBrokerQueue.coreErrorBuilderThrow]: BrokerCoreErrorBuilderThrowPayload;
 }
