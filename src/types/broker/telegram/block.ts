@@ -1,5 +1,5 @@
 import { TelegramUserProvider } from "../../models/telegram/userProvider";
 
-export interface BrokerTelegramCommandStartPayload {
+export interface BrokerTelegramCommandBlockPayload {
   userProvider: TelegramUserProvider;
 }
