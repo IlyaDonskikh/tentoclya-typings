@@ -8,7 +8,7 @@ export enum CoreTutorSubject {
   language = "language",
 }
 
-enum CoreTutorSubjectSectionLanguage {
+export enum CoreTutorSubjectSectionLanguage {
   en = "en",
   es = "es",
   zhHans = "zh-Hans",
