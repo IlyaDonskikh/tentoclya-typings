@@ -1,6 +1,6 @@
 {
   "name": "tentoclya-types",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "description": "Typings for Tentoclya ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
