@@ -11,7 +11,7 @@ export enum CoreTutorSubject {
 export enum CoreTutorSubjectSectionLanguage {
   en = "en",
   es = "es",
-  zhHans = "zh-Hans",
+  zhHans = "zhHans",
   zh = "zh",
   ko = "ko",
 }
