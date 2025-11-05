@@ -1,5 +1,6 @@
 export enum CoreUserProviderName {
   telegram = "telegram",
+  google = "google",
   email = "email",
 }
 
