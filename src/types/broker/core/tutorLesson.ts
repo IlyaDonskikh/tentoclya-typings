@@ -1,11 +1,7 @@
-import {
-  AINeuralRequestAdapter,
-  AINeuralRequestStatus,
-  AINeuralRequestType,
-} from "../../models";
+import { AINeuralRequestAdapter, AINeuralRequestType } from "../../models";
 
 export interface BrokerCoreTutorLessonCreatedPayload {
-  neuralRequest: CoreTutorLesson;
+  tutorLesson: CoreTutorLesson;
 }
 
 interface CoreTutorLesson {
