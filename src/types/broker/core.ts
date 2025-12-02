@@ -9,6 +9,7 @@ import {
 } from "./core/message";
 import { BrokerCoreSubscriptionCreatedPayload } from "./core/subscription";
 import { BrokerCoreErrorBuilderThrowPayload } from "./core/errorBuilder";
+import { BrokerCoreTutorLessonCreatedPayload } from "./core/tutorLesson";
 
 export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreMessageCreated]: BrokerCoreMessageCreatedPayload;
@@ -17,4 +18,5 @@ export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreUserProviderUpdated]: BrokerCoreUserProviderUpdatedPayload;
   [TentoclyaBrokerQueue.coreSubscriptionCreated]: BrokerCoreSubscriptionCreatedPayload;
   [TentoclyaBrokerQueue.coreErrorBuilderThrow]: BrokerCoreErrorBuilderThrowPayload;
+  [TentoclyaBrokerQueue.coreTutorLessonCreated]: BrokerCoreTutorLessonCreatedPayload;
 }

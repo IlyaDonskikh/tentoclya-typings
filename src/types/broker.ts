@@ -5,12 +5,12 @@ export enum TentoclyaBrokerQueue {
   coreUserProviderUpdated = "core.userProvider.updated",
   coreSubscriptionCreated = "core.subscription.created",
   coreErrorBuilderThrow = "core.errorBuilder.throw",
+  coreTutorLessonCreated = "core.tutorLesson.created",
   telegramCommandStart = "telegram.command.start",
   telegramCommandBlock = "telegram.command.block",
   telegramTelegramMessageCreated = "telegram.telegramMessage.created",
   telegramSubscriptionRequestCreated = "telegram.subscriptionRequest.created",
   telegramTelegramInputCreated = "telegram.telegramInput.created",
-  aiNeuralRequestRequested = "ai.neuralRequest.requested",
   aiNeuralRequestCompleted = "ai.neuralRequest.completed",
 }
 

@@ -3,17 +3,15 @@ import {
   AINeuralRequestStatus,
   AINeuralRequestType,
 } from "../../models";
-export interface BrokerAINeuralRequestCompletedPayload {
-  neuralRequest: AINeuralRequest;
+
+export interface BrokerCoreTutorLessonCreatedPayload {
+  neuralRequest: CoreTutorLesson;
 }
 
-interface AINeuralRequest {
+interface CoreTutorLesson {
   uuid: string;
-  resourceUUID: string;
   adapter: AINeuralRequestAdapter;
   type: AINeuralRequestType;
   requestPrompt: string;
   responseSchema?: string;
-  status: AINeuralRequestStatus;
-  responseText: string;
 }
