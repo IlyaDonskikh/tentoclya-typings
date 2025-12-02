@@ -1,5 +1,5 @@
 export enum AINeuralRequestAdapter {
-  openrouterChatGPT = "openai/gpt-5-chat",
+  openrouterOpenAIGPT5Chat = "openai/gpt-5-chat",
 }
 
 export enum AINeuralRequestType {
