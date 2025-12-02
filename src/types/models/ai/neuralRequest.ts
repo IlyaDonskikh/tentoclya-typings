@@ -1,8 +1,5 @@
 export enum AINeuralRequestAdapter {
-  deepseekReasoner = "deepseek-reasoner",
-  deepseekChat = "deepseek-chat",
-  openrouterDeepseekDeepseekR1 = "deepseek/deepseek-r1",
-  openrouterGoogleGemini2Point5ProExp03Dash25Free = "google/gemini-2.5-pro-exp-03-25:free",
+  openrouterChatGPT = "openai/gpt-5-chat",
 }
 
 export enum AINeuralRequestType {
