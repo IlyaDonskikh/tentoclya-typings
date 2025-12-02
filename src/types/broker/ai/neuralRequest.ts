@@ -16,4 +16,5 @@ interface AINeuralRequest {
   responseSchema?: string;
   status: AINeuralRequestStatus;
   responseText: string;
+  responseObject: any;
 }
