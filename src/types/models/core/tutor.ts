@@ -10,10 +10,16 @@ export enum CoreTutorSubject {
 
 export enum CoreTutorSubjectSectionLanguage {
   en = "en",
-  es = "es",
-  zhHans = "zhHans",
-  zh = "zh",
+  "zh-Hans" = "zh-Hans",
+  "zh-Hant" = "zh-Hant",
+  "ar-AE" = "ar-AE",
+  "ar-SA" = "ar-SA",
   ko = "ko",
+  ja = "ja",
+  hi = "hi",
+  fr = "fr",
+  de = "de",
+  es = "es",
 }
 
 export const CoreTutorSubjectSection = {
