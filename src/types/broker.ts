@@ -6,6 +6,7 @@ export enum TentoclyaBrokerQueue {
   coreSubscriptionCreated = "core.subscription.created",
   coreErrorBuilderThrow = "core.errorBuilder.throw",
   coreTutorLessonCreated = "core.tutorLesson.created",
+  coreNeuralRequestInit = "core.neuralRequest.init",
   telegramCommandStart = "telegram.command.start",
   telegramCommandBlock = "telegram.command.block",
   telegramTelegramMessageCreated = "telegram.telegramMessage.created",

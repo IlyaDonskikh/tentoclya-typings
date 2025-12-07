@@ -10,6 +10,7 @@ import {
 import { BrokerCoreSubscriptionCreatedPayload } from "./core/subscription";
 import { BrokerCoreErrorBuilderThrowPayload } from "./core/errorBuilder";
 import { BrokerCoreTutorLessonCreatedPayload } from "./core/tutorLesson";
+import { BrokerCoreNeuralRequestInitPayload } from "./core/neuralRequest";
 
 export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreMessageCreated]: BrokerCoreMessageCreatedPayload;
@@ -19,4 +20,5 @@ export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreSubscriptionCreated]: BrokerCoreSubscriptionCreatedPayload;
   [TentoclyaBrokerQueue.coreErrorBuilderThrow]: BrokerCoreErrorBuilderThrowPayload;
   [TentoclyaBrokerQueue.coreTutorLessonCreated]: BrokerCoreTutorLessonCreatedPayload;
+  [TentoclyaBrokerQueue.coreNeuralRequestInit]: BrokerCoreNeuralRequestInitPayload;
 }
