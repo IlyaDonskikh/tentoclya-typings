@@ -7,7 +7,7 @@ export enum AINeuralRequestAdapter {
 
 export enum AINeuralRequestType {
   tutorLesson = "tutorLesson",
-  tutorLessonUserDictionaryLexiconLemma = "tutorLessonUserDictionaryLexiconLemma",
+  tutorLessonDictionary = "tutorLessonDictionary",
 }
 
 export enum AINeuralRequestStatus {
