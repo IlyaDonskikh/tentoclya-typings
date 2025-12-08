@@ -20,6 +20,7 @@ export enum CoreTutorSubjectSectionLanguage {
   fr = "fr",
   de = "de",
   es = "es",
+  ru = "ru",
 }
 
 export const CoreTutorSubjectSection = {
