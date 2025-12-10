@@ -8,10 +8,19 @@ export enum AINeuralRequestAdapter {
 export enum AINeuralRequestType {
   tutorLesson = "tutorLesson",
   tutorLessonDictionary = "tutorLessonDictionary",
+  lexiconLemmaSenseRequest = "lexiconLemmaSenseRequest",
 }
 
 export enum AINeuralRequestStatus {
   created = "created",
   completed = "completed",
   failed = "failed",
+}
+
+export enum AINeuralRequestTemperature {
+  codingMath = 0.0,
+  dataCleaningAnalysis = 1.0,
+  generalConversation = 1.3,
+  translation = 1.3,
+  creativeWritingPoetry = 1.5,
 }

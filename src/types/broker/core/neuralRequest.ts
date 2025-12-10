@@ -1,4 +1,8 @@
-import { AINeuralRequestAdapter, AINeuralRequestType } from "../../models";
+import {
+  AINeuralRequestAdapter,
+  AINeuralRequestTemperature,
+  AINeuralRequestType,
+} from "../../models";
 
 export interface BrokerCoreNeuralRequestInitPayload {
   neuralRequest: CoreNeuralRequest;
@@ -10,5 +14,5 @@ interface CoreNeuralRequest {
   type: AINeuralRequestType;
   requestPrompt: string;
   responseSchema?: string;
-  temperature?: number;
+  temperature?: AINeuralRequestTemperature;
 }
