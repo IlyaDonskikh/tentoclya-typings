@@ -14,5 +14,5 @@ interface CoreNeuralRequest {
   type: AINeuralRequestType;
   requestPrompt: string;
   responseSchema?: string;
-  temperature?: AINeuralRequestTemperature;
+  temperature: AINeuralRequestTemperature;
 }
