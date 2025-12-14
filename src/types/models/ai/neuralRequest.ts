@@ -9,6 +9,7 @@ export enum AINeuralRequestType {
   tutorLesson = "tutorLesson",
   tutorLessonDictionary = "tutorLessonDictionary",
   lexiconLemmaSenseRequest = "lexiconLemmaSenseRequest",
+  lexiconSensePairRequest = "lexiconSensePairRequest",
 }
 
 export enum AINeuralRequestStatus {
@@ -20,6 +21,7 @@ export enum AINeuralRequestStatus {
 export enum AINeuralRequestTemperature {
   codingMath = 0.0,
   dataCleaningAnalysis = 1.0,
+  creativeDataCleaningAnalysis = 1.1,
   generalConversation = 1.3,
   translation = 1.3,
   creativeWritingPoetry = 1.5,
