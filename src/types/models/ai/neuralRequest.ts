@@ -6,6 +6,7 @@ export enum AINeuralRequestAdapter {
 }
 
 export enum AINeuralRequestType {
+  course = "course",
   tutorLesson = "tutorLesson",
   tutorLessonDictionary = "tutorLessonDictionary",
   lexiconLemmaSenseRequest = "lexiconLemmaSenseRequest",
