@@ -3,6 +3,7 @@ export enum AINeuralRequestAdapter {
   deepseekChat = "deepseek-chat",
   openrouterOpenAIGPT5Chat = "openai/gpt-5-chat",
   openrouterOpenAIGPT51Chat = "openai/gpt-5.1-chat",
+  openrouterOpenAIGPT55 = "openai/gpt-5.5",
 }
 
 export enum AINeuralRequestType {
