@@ -1,6 +1,7 @@
 import {
   AIGenerationRequestAdapterForModality,
   AIGenerationRequestModality,
+  AIGenerationRequestOutputSpecForModality,
   AIGenerationRequestType,
   AINeuralRequestTemperature,
 } from "../../models";
@@ -20,6 +21,6 @@ export type CoreGenerationRequest<
   type: AIGenerationRequestType;
   requestPrompt: string;
   responseSchema?: any;
-  outputSpec?: any;
+  outputSpec?: AIGenerationRequestOutputSpecForModality<M>;
   temperature: AINeuralRequestTemperature;
 };

@@ -3,6 +3,8 @@ import {
   AIGenerationArtifactMimeType,
   AIGenerationRequestAdapterForModality,
   AIGenerationRequestModality,
+  AIGenerationRequestOutputSpecForModality,
+  AIGenerationRequestResultForModality,
   AIGenerationRequestStatus,
   AIGenerationRequestType,
 } from "../../models";
@@ -23,11 +25,11 @@ export type AIGenerationRequest<
   type: AIGenerationRequestType;
   requestPrompt: string;
   responseSchema?: any;
-  outputSpec?: any;
+  outputSpec?: AIGenerationRequestOutputSpecForModality<M>;
   status: AIGenerationRequestStatus;
   responseText?: string;
   responseObject?: any;
-  result?: any;
+  result?: AIGenerationRequestResultForModality<M>;
   artifacts: AIGenerationArtifact[];
 };
 

@@ -41,15 +41,93 @@ export type AIGenerationRequestAdapterForModality<
   M extends AIGenerationRequestModality,
 > = AIGenerationRequestAdapterByModality[M];
 
+export interface AIGenerationRequestTextOutputSpec {
+  [key: string]: any;
+}
+
+export type AIGenerationRequestImageOutputFormat = "jpeg" | "png" | "webp";
+
+export type AIGenerationRequestImageQuality =
+  | "auto"
+  | "low"
+  | "medium"
+  | "high";
+
+export type AIGenerationRequestImageBackground =
+  | "auto"
+  | "transparent"
+  | "opaque";
+
+export interface AIGenerationRequestImageConfig {
+  aspect_ratio?: string;
+  background?: AIGenerationRequestImageBackground | string;
+  output_compression?: number;
+  output_format?: AIGenerationRequestImageOutputFormat | string;
+  quality?: AIGenerationRequestImageQuality | string;
+  size?: string;
+  style?: string;
+}
+
+export interface AIGenerationRequestImageOutputSpec {
+  imageConfig?: AIGenerationRequestImageConfig;
+  image_config?: AIGenerationRequestImageConfig;
+  aspectRatio?: string;
+  aspect_ratio?: string;
+  background?: AIGenerationRequestImageBackground | string;
+  outputCompression?: number;
+  output_compression?: number;
+  outputFormat?: AIGenerationRequestImageOutputFormat | string;
+  output_format?: AIGenerationRequestImageOutputFormat | string;
+  quality?: AIGenerationRequestImageQuality | string;
+  size?: string;
+  style?: string;
+  modalities?: Array<"image" | "text">;
+}
+
+export type AIGenerationRequestAudioResponseFormat = "mp3";
+
+export interface AIGenerationRequestAudioOutputSpec {
+  instructions?: string;
+  provider?: any;
+  responseFormat?: AIGenerationRequestAudioResponseFormat | string;
+  response_format?: AIGenerationRequestAudioResponseFormat | string;
+  speed?: number;
+  voice?: string;
+}
+
+export interface AIGenerationRequestOutputSpecByModality {
+  [AIGenerationRequestModality.text]: AIGenerationRequestTextOutputSpec;
+  [AIGenerationRequestModality.image]: AIGenerationRequestImageOutputSpec;
+  [AIGenerationRequestModality.audio]: AIGenerationRequestAudioOutputSpec;
+}
+
+export type AIGenerationRequestOutputSpecForModality<
+  M extends AIGenerationRequestModality,
+> = AIGenerationRequestOutputSpecByModality[M];
+
+export interface AIGenerationRequestResult {
+  text?: string;
+  object?: any;
+}
+
+export interface AIGenerationRequestResultByModality {
+  [AIGenerationRequestModality.text]: AIGenerationRequestResult;
+  [AIGenerationRequestModality.image]: AIGenerationRequestResult;
+  [AIGenerationRequestModality.audio]: AIGenerationRequestResult;
+}
+
+export type AIGenerationRequestResultForModality<
+  M extends AIGenerationRequestModality,
+> = AIGenerationRequestResultByModality[M];
+
 export enum AIGenerationRequestType {
   course = "course",
   tutorLesson = "tutorLesson",
   tutorLessonDictionary = "tutorLessonDictionary",
+  tutorLessonNodeBlockImage = "tutorLessonNodeBlockImage",
+  tutorLessonNodeBlockAudio = "tutorLessonNodeBlockAudio",
   lexiconLemmaSenseRequest = "lexiconLemmaSenseRequest",
   lexiconSensePairRequest = "lexiconSensePairRequest",
-  tutorLessonIllustration = "tutorLessonIllustration",
-  tutorLessonNarration = "tutorLessonNarration",
-  messageAttachmentImage = "messageAttachmentImage",
 }
 
 export enum AIGenerationRequestStatus {
