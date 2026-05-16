@@ -11,11 +11,11 @@ export interface BrokerCoreGenerationRequestInitPayload {
 
 interface CoreGenerationRequest {
   resourceUUID: string;
-  adapter?: AIGenerationRequestAdapter;
-  modality?: AIGenerationRequestModality;
+  adapter: AIGenerationRequestAdapter;
+  modality: AIGenerationRequestModality;
   type: AIGenerationRequestType;
   requestPrompt: string;
   responseSchema?: any;
   outputSpec?: any;
-  temperature?: AINeuralRequestTemperature;
+  temperature: AINeuralRequestTemperature;
 }

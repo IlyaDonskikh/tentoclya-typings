@@ -1,5 +1,6 @@
 import {
   AIGenerationArtifactKind,
+  AIGenerationArtifactMimeType,
   AIGenerationRequestAdapter,
   AIGenerationRequestModality,
   AIGenerationRequestStatus,
@@ -31,7 +32,7 @@ interface AIGenerationArtifact {
   kind: AIGenerationArtifactKind;
   position: number;
   storageKey: string;
-  mimeType: string;
+  mimeType: AIGenerationArtifactMimeType;
   byteSize?: number;
   width?: number;
   height?: number;

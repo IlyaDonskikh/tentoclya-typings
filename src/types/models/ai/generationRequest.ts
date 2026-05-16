@@ -35,3 +35,12 @@ export enum AIGenerationArtifactKind {
   image = "image",
   audio = "audio",
 }
+
+export enum AIGenerationArtifactMimeType {
+  imageJPEG = "image/jpeg",
+  imagePNG = "image/png",
+  imageWEBP = "image/webp",
+  audioMPEG = "audio/mpeg",
+  audioOGG = "audio/ogg",
+  audioWAV = "audio/wav",
+}
