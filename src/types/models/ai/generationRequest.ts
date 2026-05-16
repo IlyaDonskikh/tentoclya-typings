@@ -124,8 +124,8 @@ export enum AIGenerationRequestType {
   course = "course",
   tutorLesson = "tutorLesson",
   tutorLessonDictionary = "tutorLessonDictionary",
-  tutorLessonNodeBlockImage = "tutorLessonNodeBlockImage",
-  tutorLessonNodeBlockAudio = "tutorLessonNodeBlockAudio",
+  tutorLessonNodeMessageImage = "tutorLessonNodeMessageImage",
+  tutorLessonNodeMessageAudio = "tutorLessonNodeMessageAudio",
   lexiconLemmaSenseRequest = "lexiconLemmaSenseRequest",
   lexiconSensePairRequest = "lexiconSensePairRequest",
 }
