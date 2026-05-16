@@ -6,8 +6,8 @@ export enum AIGenerationRequestAdapter {
   openrouterOpenAIGPT5Chat = "openai/gpt-5-chat",
   openrouterOpenAIGPT51Chat = "openai/gpt-5.1-chat",
   openrouterOpenAIGPT55 = "openai/gpt-5.5",
-  openrouterOpenAIGPTImage1 = "openai/gpt-image-1",
-  openrouterOpenAIGPT4OMiniTTS = "openai/gpt-4o-mini-tts-2025-12-15",
+  openrouterGoogleGemini25FlashImage = "google/gemini-2.5-flash-image",
+  openrouterXAIGrokVoiceTTS10 = "x-ai/grok-voice-tts-1.0",
 }
 
 export enum AIGenerationRequestModality {
@@ -26,10 +26,10 @@ export type AIGenerationRequestTextAdapter =
   | AIGenerationRequestAdapter.openrouterOpenAIGPT55;
 
 export type AIGenerationRequestImageAdapter =
-  AIGenerationRequestAdapter.openrouterOpenAIGPTImage1;
+  AIGenerationRequestAdapter.openrouterGoogleGemini25FlashImage;
 
 export type AIGenerationRequestAudioAdapter =
-  AIGenerationRequestAdapter.openrouterOpenAIGPT4OMiniTTS;
+  AIGenerationRequestAdapter.openrouterXAIGrokVoiceTTS10;
 
 export interface AIGenerationRequestAdapterByModality {
   [AIGenerationRequestModality.text]: AIGenerationRequestTextAdapter;
