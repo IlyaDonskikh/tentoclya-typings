@@ -13,6 +13,6 @@ interface CoreNeuralRequest {
   adapter: AINeuralRequestAdapter;
   type: AINeuralRequestType;
   requestPrompt: string;
-  responseSchema?: string;
+  responseSchema?: any;
   temperature: AINeuralRequestTemperature;
 }

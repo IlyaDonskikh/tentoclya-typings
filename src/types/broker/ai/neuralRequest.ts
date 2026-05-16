@@ -13,7 +13,7 @@ interface AINeuralRequest {
   adapter: AINeuralRequestAdapter;
   type: AINeuralRequestType;
   requestPrompt: string;
-  responseSchema?: string;
+  responseSchema?: any;
   status: AINeuralRequestStatus;
   responseText: string;
   responseObject: any;
