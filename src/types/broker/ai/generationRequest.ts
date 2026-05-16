@@ -1,21 +1,25 @@
 import {
   AIGenerationArtifactKind,
   AIGenerationArtifactMimeType,
-  AIGenerationRequestAdapter,
+  AIGenerationRequestAdapterForModality,
   AIGenerationRequestModality,
   AIGenerationRequestStatus,
   AIGenerationRequestType,
 } from "../../models";
 
-export interface BrokerAIGenerationRequestCompletedPayload {
-  generationRequest: AIGenerationRequest;
+export interface BrokerAIGenerationRequestCompletedPayload<
+  M extends AIGenerationRequestModality = AIGenerationRequestModality,
+> {
+  generationRequest: AIGenerationRequest<M>;
 }
 
-interface AIGenerationRequest {
+export type AIGenerationRequest<
+  M extends AIGenerationRequestModality = AIGenerationRequestModality,
+> = {
   uuid: string;
   resourceUUID: string;
-  adapter: AIGenerationRequestAdapter;
-  modality: AIGenerationRequestModality;
+  adapter: AIGenerationRequestAdapterForModality<M>;
+  modality: M;
   type: AIGenerationRequestType;
   requestPrompt: string;
   responseSchema?: any;
@@ -25,9 +29,9 @@ interface AIGenerationRequest {
   responseObject?: any;
   result?: any;
   artifacts: AIGenerationArtifact[];
-}
+};
 
-interface AIGenerationArtifact {
+export interface AIGenerationArtifact {
   uuid: string;
   kind: AIGenerationArtifactKind;
   position: number;

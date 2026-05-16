@@ -4,8 +4,8 @@ export enum AIGenerationRequestAdapter {
   openrouterOpenAIGPT5Chat = "openai/gpt-5-chat",
   openrouterOpenAIGPT51Chat = "openai/gpt-5.1-chat",
   openrouterOpenAIGPT55 = "openai/gpt-5.5",
-  openAIImage = "openai-image",
-  openAITTS = "openai-tts",
+  openrouterOpenAIGPTImage1 = "openai/gpt-image-1",
+  openrouterOpenAIGPT4OMiniTTS = "openai/gpt-4o-mini-tts-2025-12-15",
 }
 
 export enum AIGenerationRequestModality {
@@ -13,6 +13,29 @@ export enum AIGenerationRequestModality {
   image = "image",
   audio = "audio",
 }
+
+export type AIGenerationRequestTextAdapter =
+  | AIGenerationRequestAdapter.deepseekReasoner
+  | AIGenerationRequestAdapter.deepseekChat
+  | AIGenerationRequestAdapter.openrouterOpenAIGPT5Chat
+  | AIGenerationRequestAdapter.openrouterOpenAIGPT51Chat
+  | AIGenerationRequestAdapter.openrouterOpenAIGPT55;
+
+export type AIGenerationRequestImageAdapter =
+  AIGenerationRequestAdapter.openrouterOpenAIGPTImage1;
+
+export type AIGenerationRequestAudioAdapter =
+  AIGenerationRequestAdapter.openrouterOpenAIGPT4OMiniTTS;
+
+export interface AIGenerationRequestAdapterByModality {
+  [AIGenerationRequestModality.text]: AIGenerationRequestTextAdapter;
+  [AIGenerationRequestModality.image]: AIGenerationRequestImageAdapter;
+  [AIGenerationRequestModality.audio]: AIGenerationRequestAudioAdapter;
+}
+
+export type AIGenerationRequestAdapterForModality<
+  M extends AIGenerationRequestModality,
+> = AIGenerationRequestAdapterByModality[M];
 
 export enum AIGenerationRequestType {
   course = "course",
