@@ -1,6 +1,8 @@
 export enum AINeuralRequestAdapter {
   deepseekReasoner = "deepseek-reasoner",
   deepseekChat = "deepseek-chat",
+  deepseekV4Flash = "deepseek-v4-flash",
+  deepseekV4Pro = "deepseek-v4-pro",
   openrouterOpenAIGPT5Chat = "openai/gpt-5-chat",
   openrouterOpenAIGPT51Chat = "openai/gpt-5.1-chat",
   openrouterOpenAIGPT55 = "openai/gpt-5.5",
