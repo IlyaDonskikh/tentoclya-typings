@@ -88,6 +88,39 @@ export interface AIGenerationRequestImageOutputSpec {
 
 export type AIGenerationRequestAudioResponseFormat = "mp3" | "wav";
 
+export enum AIGenerationRequestAudioVoice {
+  zephyr = "Zephyr",
+  puck = "Puck",
+  charon = "Charon",
+  kore = "Kore",
+  fenrir = "Fenrir",
+  leda = "Leda",
+  orus = "Orus",
+  aoede = "Aoede",
+  callirrhoe = "Callirrhoe",
+  autonoe = "Autonoe",
+  enceladus = "Enceladus",
+  iapetus = "Iapetus",
+  umbriel = "Umbriel",
+  algieba = "Algieba",
+  despina = "Despina",
+  erinome = "Erinome",
+  algenib = "Algenib",
+  rasalgethi = "Rasalgethi",
+  laomedeia = "Laomedeia",
+  achernar = "Achernar",
+  alnilam = "Alnilam",
+  schedar = "Schedar",
+  gacrux = "Gacrux",
+  pulcherrima = "Pulcherrima",
+  achird = "Achird",
+  zubenelgenubi = "Zubenelgenubi",
+  vindemiatrix = "Vindemiatrix",
+  sadachbia = "Sadachbia",
+  sadaltager = "Sadaltager",
+  sulafat = "Sulafat",
+}
+
 export interface AIGenerationRequestAudioOutputSpec {
   instructions?: string;
   provider?: any;
