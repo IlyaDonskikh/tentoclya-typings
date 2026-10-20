@@ -13,6 +13,11 @@ import { BrokerCoreTutorLessonCreatedPayload } from "./core/tutorLesson";
 import { BrokerCoreNeuralRequestInitPayload } from "./core/neuralRequest";
 import { BrokerCoreGenerationRequestInitPayload } from "./core/generationRequest";
 
+export type {
+  BrokerCoreGenerationRequestInitPayload,
+  CoreGenerationRequest,
+} from "./core/generationRequest";
+
 export interface TentoclyaBrokerCore {
   [TentoclyaBrokerQueue.coreMessageCreated]: BrokerCoreMessageCreatedPayload;
   [TentoclyaBrokerQueue.coreMessageCompleted]: BrokerCoreMessageCompletedPayload;

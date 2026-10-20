@@ -22,9 +22,7 @@ export type AIGenerationRequestTextAdapter =
   | AIGenerationRequestAdapter.deepseekChat
   | AIGenerationRequestAdapter.deepseekV4Flash
   | AIGenerationRequestAdapter.deepseekV4Pro
-  | AIGenerationRequestAdapter.openrouterOpenAIGPT5Chat
-  | AIGenerationRequestAdapter.openrouterOpenAIGPT51Chat
-  | AIGenerationRequestAdapter.openrouterOpenAIGPT55;
+  | `${string}/${string}`;
 
 export type AIGenerationRequestImageAdapter =
   AIGenerationRequestAdapter.openrouterGoogleGemini25FlashImage;
@@ -43,8 +41,68 @@ export type AIGenerationRequestAdapterForModality<
   M extends AIGenerationRequestModality,
 > = AIGenerationRequestAdapterByModality[M];
 
+export interface AIGenerationRequestMessage {
+  role: "system" | "user" | "assistant";
+  content: string;
+}
+
+export interface AIGenerationRequestTextInput {
+  messages: AIGenerationRequestMessage[];
+  requestPrompt?: never;
+}
+
+export interface AIGenerationRequestPromptInput {
+  requestPrompt: string;
+  messages?: never;
+}
+
+export interface AIGenerationRequestInputByModality {
+  [AIGenerationRequestModality.text]: AIGenerationRequestTextInput;
+  [AIGenerationRequestModality.image]: AIGenerationRequestPromptInput;
+  [AIGenerationRequestModality.audio]: AIGenerationRequestPromptInput;
+}
+
+export type AIGenerationRequestInputForModality<
+  M extends AIGenerationRequestModality,
+> = AIGenerationRequestInputByModality[M];
+
+export type AIGenerationRequestJSONValue =
+  | null
+  | boolean
+  | number
+  | string
+  | AIGenerationRequestJSONValue[]
+  | { [key: string]: AIGenerationRequestJSONValue };
+
+export type AIGenerationRequestResponseSchema =
+  | boolean
+  | { [keyword: string]: AIGenerationRequestJSONValue };
+
+export interface AIGenerationRequestProviderOptions {
+  order?: string[];
+  allow_fallbacks?: boolean;
+  require_parameters?: boolean;
+}
+
+export interface AIGenerationRequestReasoningOptions {
+  enabled?: boolean;
+  effort?: "none" | "minimal" | "low" | "medium" | "high" | "xhigh";
+  exclude?: boolean;
+  max_tokens?: number;
+}
+
+export interface AIGenerationRequestTool {
+  type: "openrouter:web_search" | "openrouter:web_fetch";
+  parameters?: Record<string, unknown>;
+}
+
 export interface AIGenerationRequestTextOutputSpec {
-  [key: string]: any;
+  provider?: AIGenerationRequestProviderOptions;
+  reasoning?: AIGenerationRequestReasoningOptions;
+  maxTokens?: number;
+  tools?: AIGenerationRequestTool[];
+  maxToolCalls?: number;
+  schemaName?: string;
 }
 
 export type AIGenerationRequestImageOutputFormat = "jpeg" | "png" | "webp";
@@ -88,6 +146,39 @@ export interface AIGenerationRequestImageOutputSpec {
 
 export type AIGenerationRequestAudioResponseFormat = "mp3" | "wav";
 
+export enum AIGenerationRequestAudioVoice {
+  zephyr = "Zephyr",
+  puck = "Puck",
+  charon = "Charon",
+  kore = "Kore",
+  fenrir = "Fenrir",
+  leda = "Leda",
+  orus = "Orus",
+  aoede = "Aoede",
+  callirrhoe = "Callirrhoe",
+  autonoe = "Autonoe",
+  enceladus = "Enceladus",
+  iapetus = "Iapetus",
+  umbriel = "Umbriel",
+  algieba = "Algieba",
+  despina = "Despina",
+  erinome = "Erinome",
+  algenib = "Algenib",
+  rasalgethi = "Rasalgethi",
+  laomedeia = "Laomedeia",
+  achernar = "Achernar",
+  alnilam = "Alnilam",
+  schedar = "Schedar",
+  gacrux = "Gacrux",
+  pulcherrima = "Pulcherrima",
+  achird = "Achird",
+  zubenelgenubi = "Zubenelgenubi",
+  vindemiatrix = "Vindemiatrix",
+  sadachbia = "Sadachbia",
+  sadaltager = "Sadaltager",
+  sulafat = "Sulafat",
+}
+
 export interface AIGenerationRequestAudioOutputSpec {
   instructions?: string;
   provider?: any;
@@ -121,16 +212,6 @@ export interface AIGenerationRequestResultByModality {
 export type AIGenerationRequestResultForModality<
   M extends AIGenerationRequestModality,
 > = AIGenerationRequestResultByModality[M];
-
-export enum AIGenerationRequestType {
-  course = "course",
-  tutorLesson = "tutorLesson",
-  tutorLessonDictionary = "tutorLessonDictionary",
-  tutorLessonNodeBlockImage = "tutorLessonNodeBlockImage",
-  tutorLessonNodeBlockAudio = "tutorLessonNodeBlockAudio",
-  lexiconLemmaSenseRequest = "lexiconLemmaSenseRequest",
-  lexiconSensePairRequest = "lexiconSensePairRequest",
-}
 
 export enum AIGenerationRequestStatus {
   created = "created",

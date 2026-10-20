@@ -1,9 +1,9 @@
 import {
   AIGenerationRequestAdapterForModality,
+  AIGenerationRequestInputForModality,
   AIGenerationRequestModality,
   AIGenerationRequestOutputSpecForModality,
-  AIGenerationRequestType,
-  AINeuralRequestTemperature,
+  AIGenerationRequestResponseSchema,
 } from "../../models";
 
 export interface BrokerCoreGenerationRequestInitPayload<
@@ -15,12 +15,13 @@ export interface BrokerCoreGenerationRequestInitPayload<
 export type CoreGenerationRequest<
   M extends AIGenerationRequestModality = AIGenerationRequestModality,
 > = {
-  resourceUUID: string;
-  adapter: AIGenerationRequestAdapterForModality<M>;
-  modality: M;
-  type: AIGenerationRequestType;
-  requestPrompt: string;
-  responseSchema?: any;
-  outputSpec?: AIGenerationRequestOutputSpecForModality<M>;
-  temperature: AINeuralRequestTemperature;
-};
+  [K in M]: {
+    requestID: string;
+    metadata?: Record<string, unknown>;
+    adapter: AIGenerationRequestAdapterForModality<K>;
+    modality: K;
+    responseSchema?: AIGenerationRequestResponseSchema;
+    outputSpec?: AIGenerationRequestOutputSpecForModality<K>;
+    temperature?: number;
+  } & AIGenerationRequestInputForModality<K>;
+}[M];
