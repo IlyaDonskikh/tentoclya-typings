@@ -17,12 +17,17 @@ export enum AIGenerationRequestModality {
   audio = "audio",
 }
 
-export type AIGenerationRequestTextAdapter =
+export type AIGenerationRequestDirectDeepSeekAdapter =
   | AIGenerationRequestAdapter.deepseekReasoner
   | AIGenerationRequestAdapter.deepseekChat
   | AIGenerationRequestAdapter.deepseekV4Flash
-  | AIGenerationRequestAdapter.deepseekV4Pro
-  | `${string}/${string}`;
+  | AIGenerationRequestAdapter.deepseekV4Pro;
+
+export type AIGenerationRequestOpenRouterAdapter = `${string}/${string}`;
+
+export type AIGenerationRequestTextAdapter =
+  | AIGenerationRequestDirectDeepSeekAdapter
+  | AIGenerationRequestOpenRouterAdapter;
 
 export type AIGenerationRequestImageAdapter =
   AIGenerationRequestAdapter.openrouterGoogleGemini25FlashImage;
@@ -104,6 +109,31 @@ export interface AIGenerationRequestTextOutputSpec {
   maxToolCalls?: number;
   schemaName?: string;
 }
+
+export interface AIGenerationRequestDirectDeepSeekOutputSpec {
+  maxTokens?: number;
+  reasoning?: Pick<
+    AIGenerationRequestReasoningOptions,
+    "enabled" | "effort"
+  > & {
+    exclude?: never;
+    max_tokens?: never;
+  };
+  provider?: never;
+  tools?: never;
+  maxToolCalls?: never;
+  schemaName?: never;
+}
+
+export type AIGenerationRequestTextConfiguration =
+  | {
+      adapter: AIGenerationRequestDirectDeepSeekAdapter;
+      outputSpec?: AIGenerationRequestDirectDeepSeekOutputSpec;
+    }
+  | {
+      adapter: AIGenerationRequestOpenRouterAdapter;
+      outputSpec?: AIGenerationRequestTextOutputSpec;
+    };
 
 export type AIGenerationRequestImageOutputFormat = "jpeg" | "png" | "webp";
 
