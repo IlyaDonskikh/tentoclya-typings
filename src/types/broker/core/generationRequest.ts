@@ -4,6 +4,7 @@ import {
   AIGenerationRequestModality,
   AIGenerationRequestOutputSpecForModality,
   AIGenerationRequestResponseSchema,
+  AIGenerationRequestTextConfiguration,
 } from "../../models";
 
 export interface BrokerCoreGenerationRequestInitPayload<
@@ -12,16 +13,23 @@ export interface BrokerCoreGenerationRequestInitPayload<
   generationRequest: CoreGenerationRequest<M>;
 }
 
+type GenerationConfiguration<
+  M extends AIGenerationRequestModality,
+> = M extends AIGenerationRequestModality.text
+  ? AIGenerationRequestTextConfiguration
+  : {
+      adapter: AIGenerationRequestAdapterForModality<M>;
+      outputSpec?: AIGenerationRequestOutputSpecForModality<M>;
+    };
+
 export type CoreGenerationRequest<
   M extends AIGenerationRequestModality = AIGenerationRequestModality,
 > = {
   [K in M]: {
     requestID: string;
     metadata?: Record<string, unknown>;
-    adapter: AIGenerationRequestAdapterForModality<K>;
     modality: K;
     responseSchema?: AIGenerationRequestResponseSchema;
-    outputSpec?: AIGenerationRequestOutputSpecForModality<K>;
     temperature?: number;
-  } & AIGenerationRequestInputForModality<K>;
+  } & AIGenerationRequestInputForModality<K> & GenerationConfiguration<K>;
 }[M];
